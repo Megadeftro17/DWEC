@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <label>Formulario_1</label><br/>
+    <hr>
+    <form action="" method="post">
+        <label for="nombre1">Ingrese su nombre:</label>
+        <input type="text" id="nombre1" name="nombre1"><br/>
+        <label>Seleccione los lenguajes que conoce:</label><br/>
+        <input type="checkbox" id="java" name="lenguajes" value="Java">
+        <label for="java">Java</label><br>
+        <input type="checkbox" id="cpp" name="lenguajes" value="C++">
+        <label for="cpp">C++</label><br>
+        <input type="checkbox" id="c" name="lenguajes" value="C">
+        <label for="c">C</label><br>
+        <input type="checkbox" id="csharp" name="lenguajes" value="C#">
+        <label for="csharp">C#</label><br/>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    
+    <br><br>
+    <label>Formulario_2</label><br/>
+    <hr>
+    <form action="" method="post">
+        <label for="nombre2">Ingrese su nombre:</label>
+        <input type="text" id="nombre2" name="nombre2"><br>
+
+        <label for="mail">Ingrese su mail:</label>
+        <input type="email" id="mail" name="mail"><br>
+
+        <label for="comentarios">Comentarios:</label><br>
+        <textarea id="comentarios" name="comentarios" rows="5" cols="40"></textarea><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br><br>
+    <label>Formulario_3</label><br/>
+    <hr>
+    <form action="" method="post">
+        <label for="nombre">Ingrese su nombre:</label>
+        <input type="text" id="nombre3" name="nombre3"><br>
+
+        <label>Seleccione el máximo nivel de estudios que tiene:</label><br>
+        <input type="radio" id="sin_estudios" name="estudios" value="1">
+        <label for="sin_estudios">Sin estudios</label><br>
+        
+        <input type="radio" id="primario" name="estudios" value="2">
+        <label for="primario">Primario</label><br>
+        
+        <input type="radio" id="secundario" name="estudios" value="3">
+        <label for="secundario">Secundario</label><br>
+        
+        <input type="radio" id="universitario" name="estudios2" value="4">
+        <label for="universitario">Universitario</label><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br><br>
+    <label>Formulario_4</label><br/>
+    <hr>
+    <form action="" method="post">
+        <label for="colores">Seleccione uno o varios colores (Presione Ctrl para seleccionar varios colores)</label><br>
+        <select id="colores" name="colores" multiple size="4">
+            <option value="Rojo">Rojo</option>
+            <option value="Verde">Verde</option>
+            <option value="Azul">Azul</option>
+            <option value="Marron">Marron</option>
+            <option value="Granate">Granate</option>
+            <option value="Rosa">Rosa</option>
+            <option value="Negro">Negro</option>
+            <option value="Blanco">Blanco</option>
+        </select><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br><br>
+    <label>Formulario_5</label><br/>
+    <hr>
+    <form action="" method="post">
+        <label for="alimento">Seleccione una fruta o verdura:</label>
+        <select id="alimento" name="alimento">
+            <optgroup label="Frutas">
+                <option value="Naranjas" selected>Naranjas</option>
+                <option value="Manzanas">Manzanas</option>
+                <option value="Frutilla">Frutilla</option>
+                <option value="Durazno">Durazno</option>
+                <option value="Ciruela">Ciruela</option>
+            </optgroup>
+            <optgroup label="Verduras">
+                <option value="Lechuga">Lechuga</option>
+                <option value="Acelga">Acelga</option>
+                <option value="Zapallo">Zapallo</option>
+                <option value="Papas">Papas</option>
+                <option value="Batatas">Batatas</option>
+                <option value="Zanahorias">Zanahorias</option>
+                <option value="Rabanitos">Rabanitos</option>
+                <option value="Calabaza">Calabaza</option>
+            </optgroup>
+        </select><br>
+        
+        <input type="submit" value="Enviar">
+    </form>
+    
+</body>
+</html>
