@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ejercicio 2</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <label>Formulario_1</label><br/>
+        <hr>
+        <form action="#" method="get">
+            <label for="resultado">Resultado:</label><br>
+            <input type="text" id="resultado" name="resultado" readonly><br><br>
+
+            <table>
+                <tr>
+                    <td><input type="button" value="7"></td>
+                    <td><input type="button" value="8"></td>
+                    <td><input type="button" value="9"></td>
+                    <td><input type="button" value="/"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="4"></td>
+                    <td><input type="button" value="5"></td>
+                    <td><input type="button" value="6"></td>
+                    <td><input type="button" value="*"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="1"></td>
+                    <td><input type="button" value="2"></td>
+                    <td><input type="button" value="3"></td>
+                    <td><input type="button" value="+"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="0"></td>
+                    <td><input type="button" value="="></td>
+                    <td><input type="button" value="-"></td>
+                </tr>
+            </table>
+        </form>
+
+        <br><br>
+        <label>Formulario_2</label><br/>
+        <hr>
+        <form action="#" method="get" enctype="multipart/form-data">
+            <label for="nombre">Ingrese su nombre:</label>
+            <input type="text" id="nombre" name="nombre"><br><br>
+
+            <label for="foto">Seleccione la foto:</label>
+            <input type="file" id="foto" name="foto"><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+
+        <br><br>
+        <label>Formulario_3</label><br/>
+        <hr>
+        <form action="#" method="get">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label for="nombre">Apellido y nombre:</label>
+                <input type="text" id="nombre" name="nombre"><br>
+                <label for="dni">Documento de identidad:</label>
+                <input type="text" id="dni" name="dni"><br>
+                <label for="fnac">Fecha de nacimiento:</label>
+                <input type="text" id="fnac" name="fecha_nacimiento"><br>
+                <label for="dir_pers">Dirección:</label>
+                <input type="text" id="dir_pers" name="direccion_personal">
+            </fieldset>
+
+            <fieldset>
+                <legend>Datos Laborales</legend>
+                <label for="empresa">Nombre de la empresa:</label>
+                <input type="text" id="empresa" name="empresa"><br>
+                <label for="actividad">Actividad:</label>
+                <input type="text" id="actividad" name="actividad"><br>
+                <label for="dir_lab">Dirección:</label>
+                <input type="text" id="dir_lab" name="direccion_laboral">
+            </fieldset><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+
+        <br><br>
+        <label>Formulario_4</label><br/>
+        <hr>
+        <form action="#" method="get">
+            <label for="nombre">Apellido y nombre:</label>
+            <input type="text" id="nombre" name="nombre"><br><br>
+
+            <label>Es mayor de edad?:</label><br>
+            <input type="radio" id="si" name="mayor_edad" value="Si" checked>
+            <label for="si">Si</label><br>
+            <input type="radio" id="no" name="mayor_edad" value="No">
+            <label for="no">No</label><br><br>
+
+            <label for="telefono">Telefono:</label>
+            <input type="text" id="telefono" name="telefono" value="453-"><br><br>
+
+            <textarea name="comentarios" rows="5" cols="40">Ingrese aqui sus comentarios</textarea><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+
+        <br><br>
+        <label>Formulario_5</label><br/>
+        <hr>
+        <form action="#" method="get">
+            <table>
+                <tr>
+                    <td><input type="text" tabindex="1"></td>
+                    <td><input type="text" tabindex="4"></td>
+                    <td><input type="text" tabindex="7"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" tabindex="2"></td>
+                    <td><input type="text" tabindex="5"></td>
+                    <td><input type="text" tabindex="8"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" tabindex="3"></td>
+                    <td><input type="text" tabindex="6"></td>
+                    <td><input type="text" tabindex="9"></td>
+                </tr>
+            </table>
+        </form>
+
+        <br><br>
+        <label>Formulario_6</label><br/>
+        <hr>
+        <form action="#" method="get">
+            <input type="radio" id="ninos" name="grupo_edad" value="Niños" disabled>
+            <label for="ninos">Niños</label><br>
+
+            <input type="radio" id="adolescentes" name="grupo_edad" value="Adolescentes">
+            <label for="adolescentes">Adolescentes</label><br>
+
+            <input type="radio" id="mayores" name="grupo_edad" value="Mayores">
+            <label for="mayores">Mayores</label><br>
+        </form>
+
+        <br><br>
+        <label>Formulario_7</label><br/>
+        <hr>
+        <form action="#" method="get">
+            <label for="usuario">Nombre de usuario:</label>
+            <input type="text" id="usuario" name="usuario" maxlength="20"><br><br>
+
+            <label for="clave">Clave:</label>
+            <input type="password" id="clave" name="clave" maxlength="12"><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+
+        <br><br>
+        <label>Formulario_8</label><br/>
+        <hr>
+        <form action="#" method="get">
+            <label for="empresa">Nombre de la empresa:</label>
+            <input type="text" id="empresa" name="empresa" value="Tech Solutions S.A." readonly><br><br>
+
+            <label for="contrato">Texto del contrato:</label><br>
+            <textarea id="contrato" name="contrato" rows="6" cols="50" readonly>Este es el texto del contrato que el usuario no puede modificar.</textarea>
+        </form>
+
+        <br><br>
+        <label>Formulario_9</label><br/>
+        <hr>
+        <h3>Reclamos</h3>
+        <form action="mailto:reclamos@empresa.com" method="post" enctype="text/plain">
+            <label for="nombre">Ingrese su nombre:</label>
+            <input type="text" id="nombre" name="nombre"><br><br>
+
+            <label for="direccion">Ingrese su dirección:</label>
+            <input type="text" id="direccion" name="direccion"><br><br>
+
+            <label for="problema">Informe del problema:</label><br>
+            <textarea id="problema" name="problema" rows="5" cols="40"></textarea><br><br>
+
+            <input type="submit" value="enviar">
+        </form>
+
+        <br><br>
+        <label>Formulario_10</label><br/>
+        <hr>
+        <h3>Formulario de comentarios</h3>
+        <form action="#" method="post">
+            <label for="nombre_visitante">Ingrese su nombre:</label>
+            <input type="text" id="nombre_visitante" name="nombre"><br><br>
+
+            <label for="mail_visitante">Ingrese su mail:</label>
+            <input type="email" id="mail_visitante" name="mail"><br><br>
+
+            <label for="comentarios_visitante">Comentarios:</label><br>
+            <textarea id="comentarios_visitante" name="comentarios" rows="5" cols="40"></textarea><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+        
+    </body>
+</html>
