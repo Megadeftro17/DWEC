@@ -9,11 +9,12 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
+        <!-- Haz una calculadora con Resultado y dos puntos arriba -->
         <label>Formulario_1</label><br/>
         <hr>
         <form action="#" method="get">
-            <label for="resultado">Resultado:</label><br>
-            <input type="text" id="resultado" name="resultado" readonly><br><br>
+            <label for="resultado">Resultado:</label>
+            <input type="text" id="resultado" name="resultado"><br><br>
 
             <table>
                 <tr>
@@ -36,16 +37,18 @@
                 </tr>
                 <tr>
                     <td><input type="button" value="0"></td>
-                    <td><input type="button" value="="></td>
+                    <td colspan="2"><input type="button" value="=" style="width: 100%;"></td>
                     <td><input type="button" value="-"></td>
                 </tr>
             </table>
         </form>
 
         <br><br>
+        <!-- Confeccionar un formulario que solicite el ingreso del nombre de una persona 
+         y permita seleccionar y enviar su foto. -->
         <label>Formulario_2</label><br/>
         <hr>
-        <form action="#" method="get" enctype="multipart/form-data">
+        <form action="#" method="get">
             <label for="nombre">Ingrese su nombre:</label>
             <input type="text" id="nombre" name="nombre"><br><br>
 
@@ -56,6 +59,8 @@
         </form>
 
         <br><br>
+        <!-- Confeccionar un formulario que solicite los datos personales de una persona y 
+         los datos del lugar donde trabaja, cada grupo de datos disponerlos en un fieldset. -->
         <label>Formulario_3</label><br/>
         <hr>
         <form action="#" method="get">
@@ -85,6 +90,9 @@
         </form>
 
         <br><br>
+        <!-- Confeccione un formulario que solicite el ingreso del nombre de una persona.
+         Luego que seleccione si es mayor de edad o no (por defecto inicializar en si),seguidamente el teléfono (cargar por defecto 453-) 
+         y por último en un textarea solicitar que ingrese comentarios -->
         <label>Formulario_4</label><br/>
         <hr>
         <form action="#" method="get">
@@ -106,6 +114,10 @@
         </form>
 
         <br><br>
+        <!-- Implementar un formulario que contenga una matriz de tres filas y tres columnas de elementos de tipo text. 
+         Hacer que el foco sea por columna, es decir primero tomará foco el text de la primer fila y primer columna, 
+         luego el text de la segunda fila y primer columna etc. (si no definimos la propiedad tabindex la carga de datos 
+         se efectua por fila) -->
         <label>Formulario_5</label><br/>
         <hr>
         <form action="#" method="get">
@@ -129,6 +141,8 @@
         </form>
 
         <br><br>
+        <!-- Confeccionar un formulario que muestre tres controles de tipo radio.
+         Mostrar los textos Niños, Adolescentes y Mayores. Deshabilitar el el elemento radio que corresponde a Niños.  -->
         <label>Formulario_6</label><br/>
         <hr>
         <form action="#" method="get">
@@ -143,6 +157,8 @@
         </form>
 
         <br><br>
+        <!-- Confeccionar un formulario que solicite el nombre de usuario y su clave, solo permitir ingresar en el nombres 
+         de usuarios hasta 20 caracteres y la claves hasta 12. -->
         <label>Formulario_7</label><br/>
         <hr>
         <form action="#" method="get">
@@ -156,17 +172,21 @@
         </form>
 
         <br><br>
+        <!-- Confeccionar un formulario que aparezca el nombre de una empresa en un text y 
+         el texto de un contrato en un textarea, ambos de solo lectura.  -->
         <label>Formulario_8</label><br/>
         <hr>
         <form action="#" method="get">
             <label for="empresa">Nombre de la empresa:</label>
-            <input type="text" id="empresa" name="empresa" value="Tech Solutions S.A." readonly><br><br>
+            <input type="text" id="empresa" name="empresa" value="Tech Solutions S.A." ><br><br>
 
             <label for="contrato">Texto del contrato:</label><br>
-            <textarea id="contrato" name="contrato" rows="6" cols="50" readonly>Este es el texto del contrato que el usuario no puede modificar.</textarea>
+            <textarea id="contrato" name="contrato" rows="6" cols="50">Este es el texto del contrato que el usuario no puede modificar.</textarea>
         </form>
 
         <br><br>
+        <!-- Confeccionar una página que permita hacer un reclamo de reparaciones y se envíen los datos a una dirección de correo.
+         Se debe poder ingresar el nombre, dirección y un comentario del problema.  -->
         <label>Formulario_9</label><br/>
         <hr>
         <h3>Reclamos</h3>
@@ -184,6 +204,8 @@
         </form>
 
         <br><br>
+        <!-- Confeccionar un formulario que solicite el ingreso del nombre, mail y comentarios de un visitante al sitio.
+         Asociar cada control con un elemento label. -->
         <label>Formulario_10</label><br/>
         <hr>
         <h3>Formulario de comentarios</h3>
