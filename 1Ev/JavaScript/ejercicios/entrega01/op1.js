@@ -1,5 +1,5 @@
 /**
- * 1. Crea una aplicación que solicitar el nombre al usuario y lo guardará en una variable denominada nombre. 
+ * 1. Crea una aplicación que solicitar el nombre al usuario y lo guardará en una variable denominada nombre.
  * Solicitar el primer apellido al usuario y lo guardará n una variable denominada apellido.
  * Almacenaremos en una nueva variable denominada fullName, el nombre y primer apellido registrado separados por un espacio.
  * Solicitar la edad al usuario y lo guardas en una variable denominada edad.
@@ -67,7 +67,7 @@ let n2 = parseInt(prompt("6. Dame otro numero para comparar"));
 if (n1 > 0 && n2 > 0) {
     console.log("Ambos números son positivos.");
 } else {
-    consolelog("NO son positivos");
+    console.log("NO son positivos");
 }
 
 if (n1 > n2) {
