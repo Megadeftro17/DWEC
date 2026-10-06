@@ -8,6 +8,7 @@
  *  - Nombre completo: (valor de la variable fullName)
  *  - Año de nacimiento: (valor de la variable year) */
 function ejercicio01() {
+    console.log("##################### Ejercicio 1 #####################");
     let nombre = prompt("Introduce tu nombre");
     let apellido = prompt("Introduce tu primer apellido");
     let fullName = nombre+" "+apellido;
@@ -18,8 +19,10 @@ function ejercicio01() {
     console.log("Año de nacimiento: "+year);
 }
 
+/*************************************************************************************************************************************/
 /* 2. Calcula el exponencial de cualquier número */
 function ejercicio02() {
+    console.log("##################### Ejercicio 2 #####################");
     let base = prompt("Introduce un numero para su exponencial");
     let exponente = prompt("Introduce su exponente");
 
@@ -27,8 +30,10 @@ function ejercicio02() {
     console.log("Resultado: "+resultadoExponencial);
 }
 
+/*************************************************************************************************************************************/
 /* 3. Crea un script para calcular números pares e impares. Los números se introducen por teclado y emplear el módulo %. */
 function ejercicio03() {
+    console.log("##################### Ejercicio 3 #####################");
     let numeroParImpar = prompt("Introduce un numero para saber si es par o impar");
     if(numeroParImpar % 2 == 0){
         console.log("El numero "+numeroParImpar+" es par");
@@ -37,9 +42,11 @@ function ejercicio03() {
     }
 }
 
+/*************************************************************************************************************************************/
 /* 4. Detectar si un número es múltiplo de otro número. */
 function ejercicio04() {
-        let numeroMultiplo = parseInt(prompt("Introduce un numero para saber si es multiplo"));
+    console.log("##################### Ejercicio 4 #####################");
+    let numeroMultiplo = parseInt(prompt("Introduce un numero para saber si es multiplo"));
     let numeroMultiplo1 = parseInt(prompt("Introduce el otro para comprobar"));
     if(numeroMultiplo % numeroMultiplo1 == 0){
         console.log("El numero "+numeroMultiplo1+" es multiplo de "+numeroMultiplo);
@@ -48,16 +55,20 @@ function ejercicio04() {
     }
 }
 
+/*************************************************************************************************************************************/
 /* 5. Crea un Array que almacene los 12 meses del año y muestra cada mes empleando un for */
 function ejercicio05() {
+    console.log("##################### Ejercicio 5 #####################");
     let meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
     for(let i = 0; i < meses.length; i++){
         console.log(meses[i]);
     }
 }
 
+/*************************************************************************************************************************************/
 /* 6. Compara dos números enteros para saber cual es mayor. Además comprueba si son positivos */
 function ejercicio06() {
+    console.log("##################### Ejercicio 6 #####################");
     let numeroComparar1 = parseInt(prompt("Introduce un numero para saber si es mayor"));
     let numeroComparar2 = parseInt(prompt("Introduce otro numero"));
     if(numeroComparar1 > 0 && numeroComparar2 > 0){
@@ -75,6 +86,7 @@ function ejercicio06() {
     }
 }
 
+/*************************************************************************************************************************************/
 /* 7. Muestra en el documento HTML los 30 primeros números */
 function ejercicio07() {
     let contenedor = document.getElementById("ej07-08");
@@ -85,6 +97,7 @@ function ejercicio07() {
     }
 }
 
+/*************************************************************************************************************************************/
 /* 8. Muestra en el documento HTML el factorial de un número que se inserta por teclado. Declara dos variables: para el número y para el resultado. Emplea un for. */
 function ejercicio08(){
     let numFactorial = parseInt(prompt("Introduce un numero para su factorial"));
@@ -96,6 +109,7 @@ function ejercicio08(){
     contenedor.innerHTML = "<h3>Ejercicio 8: Factorial de "+numFactorial+" --> "+resultado;
 }
 
+/*************************************************************************************************************************************/
 /* 9. Crea un script para que al accionar un botón, solicite insertar el nombre de una ciudad.
  * Muestra en una ventana, la elección múltiple de 3 ciudades con switch.
  * Tienes que declarar las siguientes ciudades (Zaragoza, Barcelona, Madrid) y que cada una tenga su propio mensaje. */
