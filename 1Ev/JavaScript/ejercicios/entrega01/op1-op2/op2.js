@@ -1,7 +1,7 @@
 /**
  * 1. Realiza una aplicación Web, que mediante JavaScript muestre el siguiente aviso.
  * Para ello, debes crear una variable de tipo String llamada mensaje. */
-function ejercicio01() {
+function ejercicio21() {
     let mensaje = "Esta página dice\nHola a todo el Mundo!\nQué facil es incluir \'comillas simples\'\ny \"comillas dobles\"";
     alert(mensaje);
 }
@@ -9,7 +9,7 @@ function ejercicio01() {
 /*************************************************************************************************************************************/
 /* 2. Realiza una aplicación Web, que mediante JavaScript haga divisiones en binario con desplazamiento a la derecha.
  * Ejemplo Decimal: 40 / 16 vs Ejemplo binario: 40 >> 4.*/
-function ejercicio02() {
+function ejercicio22() {
     console.log("##################### Ejercicio 2 #####################");
     let dividendo = parseInt(prompt("Introduce un numero para el dividendo"));
     let divisor = parseInt(prompt("Introduce un numero para el divisor (multiplo de 2)"));
@@ -24,7 +24,7 @@ function ejercicio02() {
 /*************************************************************************************************************************************/
 /* 3. Realiza una aplicación Web, que mediante JavaScript haga multiplicaciones en binario con desplazamiento a la izquierda.
  * Ejemplo Decimal: 26 x 4 vs Ejemplo binario: 26 << 2. */
-function ejercicio03() {
+function ejercicio23() {
     console.log("##################### Ejercicio 3 #####################");
     let multiplicando = parseInt(prompt("Introduce un numero para el multiplicando"));
     let multiplicador = parseInt(prompt("Introduce un numero para el multiplicador"));
@@ -37,7 +37,7 @@ function ejercicio03() {
 /*************************************************************************************************************************************/
 /* 4. Realiza una aplicación Web, que mediante JavaScript muestre por consola, el máximo y el valor mas cercano a cero posible con Javascript. Ayuda: emplea 
  * Number.MaxValue y Number.MinValue. Basándote en lo anterior, muestra un valor infinito. */
-function ejercicio04() {
+function ejercicio24() {
     console.log("##################### Ejercicio 4 #####################");
     let valorMaximo = Number.MAX_VALUE;
     console.log("El valor maximo en JavaScript es: "+valorMaximo);
@@ -57,7 +57,7 @@ function ejercicio04() {
 * están escritas en minúsculas, mayúsculas ó ambas. Emplea: toUpperCase() y toLowerCase()
 * De manera adicional, mejora la aplicación anterior, para poder evaluar cualquier
 * cadena de texto que introduce el usuario */
-function ejercicio05(){
+function ejercicio25(){
     console.log("##################### Ejercicio 5 #####################");
     function comprobarCadena(texto){
         if (texto === texto.toUpperCase()) {

@@ -8,7 +8,7 @@
  * - NotaProyecto y NotaExamen es mayor o igual de 4,5 y la media entre 7 y menor de 9. Calificacion: Notable.
  * - NotaProyecto y NotaExamen es mayor o igual de 4,5 y la media mayor o igual que 9. Calificación: Sobresaliente.
  * Recordar que las notas de proyecto y de examen van desde 0 a 10 (ambos incluidos)*/
-function ejercicio01() {
+function ejercicio_a1() {
     console.log("##################### Ejercicio 1 #####################");
     // Variables
     let notaProyecto = parseFloat(prompt("Introduce la nota del proyecto"));
@@ -50,7 +50,7 @@ function ejercicio01() {
  * ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E']
  * - Número de DNI negativos y superiores a 99.999.999 no existen.
  * - Para el cálculo de la letra, emplea el módulo del total de posiciones del array.*/
-function ejercicio02() {
+function ejercicio_a2() {
     console.log("##################### Ejercicio 2 #####################");
 
     // Variables
@@ -87,13 +87,15 @@ function ejercicio02() {
  * - No se puede borrar ninguna línea de código de los archivos.
  * - No se puede modificar los nombres de los archivos.
  * - Se escribe el código que se necesite debajo de cada comentario.*/
-function ejercicio03() {
-    // Usando for
+function ejercicio_a3() {
     let contenedor = document.getElementById("ej03");
+
+    // Usando for
     contenedor.innerHTML = "<h3>TABLA DE MULTIPLICAR DEL 7</h3>";
     for(let i = 1; i <= 10; i++){
         contenedor.innerHTML += "7 x "+i+" = "+(7*i)+"<br>";
     }
+
     // Usando while
     contenedor.innerHTML += "<h3>TABLA DE MULTIPLICAR DEL 8</h3>";
     let j = 1;
@@ -101,6 +103,7 @@ function ejercicio03() {
         contenedor.innerHTML += "8 x "+j+" = "+(8*j)+"<br>";
         j++;
     }
+
     // Usando doWhile
     contenedor.innerHTML += "<h3>TABLA DE MULTIPLICAR DEL 9</h3>";
     let k = 1;
@@ -111,15 +114,24 @@ function ejercicio03() {
 
     // Operaciones Bits
     contenedor.innerHTML += "<h3>Operaciones con desplazamiento de bits</h3>";
-    contenedor.innerHTML += "125 / 8 con desplazamiento de bits <br>";
-    contenedor.innerHTML += (125 >> 3) + ("<br><br>");
 
-    contenedor.innerHTML += "25 / 2 con desplazamiento de bits <br>";
-    contenedor.innerHTML += (25 >> 1) + ("<br><br>");
+    // 1. División Dinámica
+    let dividendo = parseInt(prompt("BITS - Introduce el dividendo (ej. 125 o 25):"));
+    let divisor = parseInt(prompt("BITS - Introduce el divisor (debe ser potencia de 2):"));
 
-    contenedor.innerHTML += "40 x 4 con desplazamiento de bits <br>";
-    contenedor.innerHTML += (40 << 2) + ("<br><br>");
+    let desplDerecha = Math.log2(divisor);
+    let resultadoDiv = dividendo >> desplDerecha;
 
-    contenedor.innerHTML += "10 x 16 con desplazamiento de bits <br>";
-    contenedor.innerHTML += (10 << 4) + ("<br><br>");
+    contenedor.innerHTML += "División: " + dividendo + " / " + divisor + " con desplazamiento de bits <br>";
+    contenedor.innerHTML += "Operación binaria: " + dividendo + " >> " + desplDerecha + " = " + resultadoDiv + " <br><br>";
+
+    // 2. Multiplicación
+    let multiplicando = parseInt(prompt("BITS - Introduce el multiplicando (ej. 40 o 10):"));
+    let multiplicador = parseInt(prompt("BITS - Introduce el multiplicador (potencia de 2):"));
+
+    let desplIzquierda = Math.log2(multiplicador);
+    let resultadoMult = multiplicando << desplIzquierda;
+
+    contenedor.innerHTML += "Multiplicación: " + multiplicando + " x " + multiplicador + " con desplazamiento de bits <br>";
+    contenedor.innerHTML += "Operación binaria: " + multiplicando + " << " + desplIzquierda + " = " + resultadoMult + " <br><br>";
 }
