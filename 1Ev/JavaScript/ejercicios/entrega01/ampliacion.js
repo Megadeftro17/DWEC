@@ -1,5 +1,5 @@
 /*
- * Crea una aplicación Web que mediante JavaScript calcule la nota de la primera evaluación de la asignatura de Desarrollo Web Entorno Cliente.
+ * 1. Crea una aplicación Web que mediante JavaScript calcule la nota de la primera evaluación de la asignatura de Desarrollo Web Entorno Cliente.
  * Crea dos variables: NotaProyecto y NotaExamen que se introducirán por teclado.
  * Sacar por pantalla la media resultante y su calificación. Contemplar cada uno de los siguientes casos:
  * - NotaProyecto o NotaExamen es menor de 4,5. Calificación: Suspenso.
@@ -36,7 +36,7 @@ function ejercicio01() {
 }
 
 /*************************************************************************************************************************************/
-/* Realiza una aplicación Web, que mediante JavaScript verifique el DNI. Se solicitará dos entradas al usuario.
+/* 2. Realiza una aplicación Web, que mediante JavaScript verifique el DNI. Se solicitará dos entradas al usuario.
  * - Número de DNI
  * - Letra de DNI
  * Se mostrará por pantalla si el DNI es correcto o incorrecto (Numero y letra).
@@ -78,7 +78,7 @@ function ejercicio02() {
 }
 
 /*************************************************************************************************************************************/
-/* Empleando el fichero operaciones.js, realiza una aplicación Web que contenga la siguiente información:
+/* 3. Empleando el fichero operaciones.js, realiza una aplicación Web que contenga la siguiente información:
  * Emplea los siguientes archivos para su resolución:
  * - La aplicación Web se llama “OperacionesBits”
  * - El fichero de Javascript se llama “Operaciones”
@@ -88,5 +88,38 @@ function ejercicio02() {
  * - No se puede modificar los nombres de los archivos.
  * - Se escribe el código que se necesite debajo de cada comentario.*/
 function ejercicio03() {
-    console.log("##################### Ejercicio 3 #####################");
+    // Usando for
+    let contenedor = document.getElementById("ej03");
+    contenedor.innerHTML = "<h3>TABLA DE MULTIPLICAR DEL 7</h3>";
+    for(let i = 1; i <= 10; i++){
+        contenedor.innerHTML += "7 x "+i+" = "+(7*i)+"<br>";
+    }
+    // Usando while
+    contenedor.innerHTML += "<h3>TABLA DE MULTIPLICAR DEL 8</h3>";
+    let j = 1;
+    while(j <= 10){
+        contenedor.innerHTML += "8 x "+j+" = "+(8*j)+"<br>";
+        j++;
+    }
+    // Usando doWhile
+    contenedor.innerHTML += "<h3>TABLA DE MULTIPLICAR DEL 9</h3>";
+    let k = 1;
+    do{
+        contenedor.innerHTML += "9 x "+k+" = "+(9*k)+"<br>";
+        k++;
+    } while(k <= 10);
+
+    // Operaciones Bits
+    contenedor.innerHTML += "<h3>Operaciones con desplazamiento de bits</h3>";
+    contenedor.innerHTML += "125 / 8 con desplazamiento de bits <br>";
+    contenedor.innerHTML += (125 >> 3) + ("<br><br>");
+
+    contenedor.innerHTML += "25 / 2 con desplazamiento de bits <br>";
+    contenedor.innerHTML += (25 >> 1) + ("<br><br>");
+
+    contenedor.innerHTML += "40 x 4 con desplazamiento de bits <br>";
+    contenedor.innerHTML += (40 << 2) + ("<br><br>");
+
+    contenedor.innerHTML += "10 x 16 con desplazamiento de bits <br>";
+    contenedor.innerHTML += (10 << 4) + ("<br><br>");
 }
