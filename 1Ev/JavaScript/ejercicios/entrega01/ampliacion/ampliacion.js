@@ -90,28 +90,35 @@ function ejercicio_a2() {
 function ejercicio_a3() {
     let contenedor = document.getElementById("ej03");
 
-    // Usando for
-    contenedor.innerHTML = "<h3>TABLA DE MULTIPLICAR DEL 7</h3>";
-    for(let i = 1; i <= 10; i++){
-        contenedor.innerHTML += "7 x "+i+" = "+(7*i)+"<br>";
-    }
+    let tabla = "<table border = \"1px\"><tr>";
 
+    tabla += "<td><table><tr><th>TABLA DE MULTIPLICAR DEL 7</th></tr>";
+    // Usando for
+    for (let i = 1; i <= 10; i++) {
+        tabla += "<tr><td>7 x " + i + " = " + (7 * i) + "</td></tr>";
+    }
+    tabla += "</table></td>";
+
+    tabla += "<td><table><tr><th>TABLA DE MULTIPLICAR DEL 8</th></tr>";
     // Usando while
-    contenedor.innerHTML += "<h3>TABLA DE MULTIPLICAR DEL 8</h3>";
     let j = 1;
-    while(j <= 10){
-        contenedor.innerHTML += "8 x "+j+" = "+(8*j)+"<br>";
+    while (j <= 10) {
+        tabla += "<tr><td>8 x " + j + " = " + (8 * j) + "</td></tr>";
         j++;
     }
+    tabla += "</table></td>";
 
-    // Usando doWhile
-    contenedor.innerHTML += "<h3>TABLA DE MULTIPLICAR DEL 9</h3>";
+    tabla += "<td><table><tr><th>TABLA DE MULTIPLICAR DEL 9</th></tr>";
+    // Usando do while
     let k = 1;
-    do{
-        contenedor.innerHTML += "9 x "+k+" = "+(9*k)+"<br>";
+    do {
+        tabla += "<tr><td>9 x " + k + " = " + (9 * k) + "</td></tr>";
         k++;
-    } while(k <= 10);
+    } while (k <= 10);
+    tabla += "</table></td></tr>";
 
+    tabla += "</table>";
+    contenedor.innerHTML = tabla;
     // Operaciones Bits
     contenedor.innerHTML += "<h3>Operaciones con desplazamiento de bits</h3>";
 
