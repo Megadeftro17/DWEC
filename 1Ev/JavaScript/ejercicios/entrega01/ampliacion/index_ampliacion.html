@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Ampliación - JavaScript</title>
+    <link rel="icon" href="data:,">
+    <style>
+        body {
+            color: #333;
+            background-color: #fcfcfc;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        h1 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 0;
+        }
+        .bloque-ejercicios {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .botones-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        button {
+            padding: 8px 14px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #eaeaea;
+        }
+        .resultado {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 4px solid #666;
+            background-color: #f4f4f4;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+
+    <script src="ampliacion.js"></script>
+</head>
+<body>
+    <h1>Ejercicios UD 2 - Ampliación</h1>
+    <p>Pulsa F12 para abrir la consola y ver los resultados de los ejercicios 1 y 2.</p>
+
+    <!-- BLOQUE AMPLIACIÓN -->
+    <div class="bloque-ejercicios">
+        <h2>Ejercicios Ampliación</h2>
+        <div class="botones-grid">
+            <button onclick="ejercicio_a1()">1: Notas Evaluación</button>
+            <button onclick="ejercicio_a2()">2: Verificación DNI</button>
+            <button onclick="ejercicio_a3()">3: Bucles y Operaciones Bits</button>
+        </div>
+        <div id="ej03" class="resultado">
+            <em>El resultado del ejercicio 3 aparecerá aquí.</em>
+        </div>
+    </div>
+</body>
+</html>

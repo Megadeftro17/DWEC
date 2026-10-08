@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios UD 2 - JavaScript</title>
+    <link rel="icon" href="data:,">
+    <style>
+        body {
+            color: #333;
+            background-color: #fcfcfc;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        h1 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 0;
+        }
+        .bloque-ejercicios {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .botones-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        button {
+            padding: 8px 14px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #eaeaea;
+        }
+        .resultado {
+            margin-top: 15px;
+            padding: 15px;
+            border-left: 4px solid #666;
+            background-color: #f4f4f4;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+    
+    <script src="op1.js"></script>
+    <script src="op2.js"></script>
+</head>
+<body>
+    <h1>Ejercicios UD 2 - JavaScript</h1>
+    <p>Pulsa F12 para abrir la consola y ver los resultados de los ejercicios del 1 al 6.</p>
+
+    <!-- BLOQUE OP1 -->
+    <div class="bloque-ejercicios">
+        <h2>Ejercicios op1</h2>
+        <div class="botones-grid">
+            <button onclick="ejercicio01()">1: Nombre y Edad</button>
+            <button onclick="ejercicio02()">2: Exponencial</button>
+            <button onclick="ejercicio03()">3: Par o Impar</button>
+            <button onclick="ejercicio04()">4: Múltiplos</button>
+            <button onclick="ejercicio05()">5: Array de Meses</button>
+            <button onclick="ejercicio06()">6: Comparador</button>
+            <button onclick="ejercicio07()">7: Mostrar 30 números (HTML)</button>
+            <button onclick="ejercicio08()">8: Factorial (HTML)</button>
+            <button onclick="ejercicio09()">9: Switch de Ciudades</button>
+        </div>
+        <div id="ej07-08" class="resultado">
+            <em>Los resultados de los ejercicios 7 y 8 aparecerán aquí.</em>
+        </div>
+    </div>
+
+    <!-- BLOQUE OP2 -->
+    <div class="bloque-ejercicios">
+        <h2>Ejercicios op2</h2>
+        <div class="botones-grid">
+            <button onclick="ejercicio21()">1: Mostrar aviso</button>
+            <button onclick="ejercicio22()">2: División binario derecha</button>
+            <button onclick="ejercicio23()">3: Multiplicación binario izquierda</button>
+            <button onclick="ejercicio24()">4: Valor máximo cercano</button>
+            <button onclick="ejercicio25()">5: Mayúsculas o minúsculas</button>
+        </div>
+    </div>
+</body>
+</html>
