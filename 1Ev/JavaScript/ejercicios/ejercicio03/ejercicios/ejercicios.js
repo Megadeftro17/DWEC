@@ -87,4 +87,7 @@ function ejercicio5(){
     let talla = prompt("Introduce tu talla europea (XXL, XL, L, M, S, XS, XXS)");
     let resultado = "";
     if(talla.includes["XXL","XL","L"]) resultado = "Grande";
+
+
+    z
 }
