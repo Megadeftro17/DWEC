@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="calculadora.css">
+</head>
+<body>
+
+    <div class="calculadora-contenedor">
+        <!-- Pantalla con cuadro principal y secundario -->
+        <div class="pantalla">
+            <div id="pantalla-anterior" class="texto-secundario"></div>
+            <div id="pantalla-actual" class="texto-principal">0</div>
+        </div>
+
+        <!-- Botones de la calculadora -->
+        <div class="botones">
+            <button class="btn-borrar" onclick="borrar()">C</button>
+            <button class="btn-operador" onclick="calcularRaiz()">√</button>
+            <button class="btn-operador" onclick="elegirOperacion('/')">÷</button>
+            <button class="btn-operador" onclick="elegirOperacion('*')">×</button>
+
+            <button class="btn-numero" onclick="agregarNumero('7')">7</button>
+            <button class="btn-numero" onclick="agregarNumero('8')">8</button>
+            <button class="btn-numero" onclick="agregarNumero('9')">9</button>
+            <button class="btn-operador" onclick="elegirOperacion('-')">−</button>
+
+            <button class="btn-numero" onclick="agregarNumero('4')">4</button>
+            <button class="btn-numero" onclick="agregarNumero('5')">5</button>
+            <button class="btn-numero" onclick="agregarNumero('6')">6</button>
+            <button class="btn-operador" onclick="elegirOperacion('+')">+</button>
+
+            <button class="btn-numero" onclick="agregarNumero('1')">1</button>
+            <button class="btn-numero" onclick="agregarNumero('2')">2</button>
+            <button class="btn-numero" onclick="agregarNumero('3')">3</button>
+            <button class="btn-igual" onclick="calcular()">=</button>
+
+            <button class="btn-numero btn-cero" onclick="agregarNumero('0')">0</button>
+            <button class="btn-numero" onclick="agregarDecimal()">.</button>
+        </div>
+    </div>
+
+    <script src="calculadora.js"></script>
+</body>
+</html>

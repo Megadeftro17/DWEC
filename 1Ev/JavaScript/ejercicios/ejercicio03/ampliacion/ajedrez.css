@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+    padding: 100px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    border: 2px solid black;
+}
+
+td {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.casilla-oscura {
+    background-color: #000000; /* El color de fondo que ya tenías */
+    color: white; /* Esto pintará la figura de blanco */
+}
+
+.casilla-clara {
+    background-color: #ffffff;
+    color: black; /* Opcional, para asegurar que aquí sean negras */
+}
