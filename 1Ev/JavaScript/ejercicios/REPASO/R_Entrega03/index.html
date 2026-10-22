@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicios 3.13 - JavaScript</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            button { margin: 5px; padding: 10px; cursor: pointer; }
+            .ejercicio-container { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; }
+        </style>
+        <script src="repaso03.js"></script>
+    </head>
+    <body>
+        <h1>Ejercicios - Apartado 3.13</h1>
+
+        <div class="ejercicio-container">
+            <!-- Crea un script que mediante un botón vaya a la pantalla anterior de navegación -->
+            <button onclick="ejercicio01()">1. Pantalla anterior</button>
+
+            <!-- Abre un pop-up con una página web -->
+            <button onclick="ejercicio02()">2. Abrir Pop-up</button>
+
+            <!-- Bucle del 1 al 500, muestra múltiplos de 3 y cuenta no primos -->
+            <button onclick="ejercicio03()">3. Bucle 1 a 500</button>
+
+            <!-- Identifica el número menor y mayor de un array de 10 números -->
+            <button onclick="ejercicio04()">4. Mayor y menor de 10 números</button>
+
+            <!-- Identificar talla de prenda a partir de tallas europeas -->
+            <button onclick="ejercicio05()">5. Identificar Talla Ropa</button>
+
+            <!-- Calcular la longitud de la circunferencia -->
+            <button onclick="ejercicio06()">6. Longitud de circunferencia</button>
+
+            <!-- Rellenar la puesta de Euromillones aleatoriamente -->
+            <button onclick="ejercicio07()">7. Generar Euromillones</button>
+
+            <!-- Mostrar posiciones de coordenadas de una matriz -->
+            <button onclick="ejercicio08()">8. Matriz de coordenadas</button>
+        </div>
+
+        <!-- Ejercicio de insertar texto para seguir leyendo una noticia -->
+        <div class="ejercicio-container">
+            <h2>Noticias Páginas Web (Ejercicio 10)</h2>
+            <p>En el instituto, como ESCUELA PROMOTORA DE SALUD y dentro del proyecto de salud, llevamos varios años colaborando con Donantes de Sangre de Zaragoza. Esta colaboración consiste en facilitarles, un espacio en nuestro...</p>
+            <p id="demo1"></p>
+            <button type="button" onclick="ejercicio10()">Seguir Leyendo</button>
+        </div>
+
+        <!-- Contenedor para mostrar resultados en pantalla -->
+        <h3>Resultados:</h3>
+        <div id="resultado"></div>
+    </body>
+</html>
