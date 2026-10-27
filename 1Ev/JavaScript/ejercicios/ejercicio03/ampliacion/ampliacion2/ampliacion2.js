@@ -9,7 +9,7 @@ function pulsar() {
         divPalabras.innerHTML = "<p>Por favor, escribe algo en el textarea.</p>";
     } else {
         // Dividimos el texto por espacios en blanco (usando expresión regular para múltiples espacios)
-        const palabrasArr = texto.split(/\s+/); 
+        const palabrasArr = texto.split(" ");
         const numPalabras = palabrasArr.length;
         const primeraPalabra = palabrasArr[0];
         const ultimaPalabra = palabrasArr[numPalabras - 1];
