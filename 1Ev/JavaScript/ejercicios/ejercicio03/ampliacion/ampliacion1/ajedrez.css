@@ -17,11 +17,11 @@ td {
 }
 
 .casilla-oscura {
-    background-color: #000000; /* El color de fondo que ya tenías */
-    color: white; /* Esto pintará la figura de blanco */
+    background-color: #000000;
+    color: white;
 }
 
 .casilla-clara {
     background-color: #ffffff;
-    color: black; /* Opcional, para asegurar que aquí sean negras */
+    color: black;
 }
