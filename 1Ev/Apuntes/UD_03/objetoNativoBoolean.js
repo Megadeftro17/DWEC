@@ -2,7 +2,7 @@
 // inicial de un objeto Boolean,
 //el nuevo objeto Boolean tiene un valor de true.
 
-console.log("############# Objeto Nativo Boolean #############")
+console.log("############# Objeto Nativo Boolean #############");
 let myFalse = new Boolean(false); // valor inicial de false
 console.log("Valor inicial de false --> "+myFalse);
 let g = Boolean(myFalse); // valor inicial de true
