@@ -1,0 +1,5 @@
+Examen DWEC
+- Hacer los de ampliación
+- cambiar los for
+- Revisar errores y forzarlos para poner excepciones 
+- hidden, visibility, etc
