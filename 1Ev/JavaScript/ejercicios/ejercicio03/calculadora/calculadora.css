@@ -1,0 +1,78 @@
+/* Configuración general y tipografía */
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f4f6;
+    margin: 0;
+}
+
+/* Contenedor principal de la calculadora */
+.calculadora-contenedor {
+    background-color: #1f2937;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    overflow: hidden;
+}
+
+/* Estilos de la pantalla */
+.pantalla {
+    background-color: #111827;
+    padding: 20px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 80px;
+}
+
+.texto-secundario {
+    color: #9ca3af;
+    font-size: 1rem;
+    min-height: 1.5rem;
+}
+
+.texto-principal {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+/* Cuadrícula de botones */
+.botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: #374151;
+}
+
+button {
+    border: none;
+    padding: 20px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: #ffffff;
+}
+
+/* Colores interactivos accesibles */
+.btn-numero { background-color: #374151; }
+.btn-numero:hover { background-color: #4b5563; }
+
+.btn-operador { background-color: #4f46e5; }
+.btn-operador:hover { background-color: #4338ca; }
+
+.btn-borrar { background-color: #ef4444; }
+.btn-borrar:hover { background-color: #dc2626; }
+
+.btn-igual { 
+    background-color: #10b981; 
+    grid-row: span 2; 
+}
+.btn-igual:hover { background-color: #059669; }
+
+.btn-cero { grid-column: span 2; }
