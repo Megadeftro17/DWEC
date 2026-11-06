@@ -5,47 +5,48 @@
  * - Además el primer número tiene que ser impar
  * - La letra tiene que ser P ó S para diferenciar los estudios*/
 
-function ej1 (){
+function ej1() {
     let mostrar = document.getElementById("ej1");
     let matricula = "";
     let correcta = false;
-    do{
 
-        // PEDIR DATOS
-        let matricula = prompt("Introduce tu matrícula de alumno (12345A)");
+    do {
+        matricula = prompt("Introduce tu matrícula de alumno (ej: 12345P)");
 
-        // NO INTRODUCE NADA
-        if(matricula === null) return;
+        // Si es nulo sale
+        if (matricula === null) return;
         correcta = true;
 
-        // LONGITUD == 6
-        if(matricula.length != 6){
-            alert("Error la matricula no tiene la longitud acertada");
+        // longitud == 6
+        if (matricula.length !== 6) {
+            alert("Error: La matrícula debe tener exactamente 6 caracteres (5 números y 1 letra).");
             correcta = false;
         }
 
-        // REVISAR
-        if(correcta && isNaN(matricula.substring(0,5))){
+        // los primeros 5 deben ser números
+        if (correcta && isNaN(matricula.substring(0, 5))) {
             alert("Error: Los primeros 5 caracteres deben ser números.");
             correcta = false;
         }
 
-
-        // comprobar que es impar el primer valor (CAMBIAR TIPO DE DATO!!!)
-        if(correcta && parseInt(matricula.charAt(0) % 2 == 0)){
+        // el primer número tiene que ser impar
+        if (correcta && parseInt(matricula.charAt(0)) % 2 === 0) {
+            alert("Error: El primer número de la matrícula debe ser impar.");
             correcta = false;
         }
 
-        // CONVERTIR LETRA A MAYUSCULA
-        let letra = matricula.charAt(matricula.length-1).toUpperCase();
-        if (letra !== 'P' && letra !== 'S'){
-            alert("ERROR: La letra debe ser P o S");
-            correcta = false;
+        // la letra tiene que ser P o S
+        if (correcta) {
+            let letra = matricula.charAt(5).toUpperCase();
+            if (letra !== 'P' && letra !== 'S') {
+                alert("Error: La letra final debe ser P o S.");
+                correcta = false;
+            }
         }
 
-    } while(!correcta);
+    } while (!correcta);
 
-    mostrar.innerHTML = "La matricula "+matricula+" ES CORRECTA";
+    mostrar.innerHTML = "La matrícula " + matricula + " ES CORRECTA.";
 }
 
-let prueba = ej1();
+ej1();
