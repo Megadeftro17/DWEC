@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tablero de Ajedrez</title>
+    <style>
+        h1 {
+    text-align: center;
+    padding: 100px;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin: 20px auto;
+        border: 2px solid black;
+    }
+
+    td {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .casilla-oscura {
+        background-color: #000000;
+        color: white;
+    }
+
+    .casilla-clara {
+        background-color: #ffffff;
+        color: black;
+    }
+    </style>
+</head>
+<body>
+    <table id="tablero"></table>
+</body>
+
+<script src="ajedrez.js"></script>
+</html>
