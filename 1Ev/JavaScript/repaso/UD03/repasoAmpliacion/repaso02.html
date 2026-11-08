@@ -18,11 +18,26 @@
 - Calcula y muestra el numero de palabras que están escritas en el textarea
 - Muestra la ultima y la primera palabra del textarea
 */
-let palabrasText = document.forms['formulario']['mitexto'].value;
-console.log(palabrasText);
+
+function pulsar(){
+
+    let htmlPalabras = "";
+    let htmlCalificaciones = "";
+
+    let palabrasText = document.forms['formulario']['mitexto'].value;
+
+    let arrayPalabras = palabrasText.split(" ");
+    let cantidadPalabras = arrayPalabras.length;
+    let primeraPalabra = arrayPalabras[0];
+    let ultimaPalabra = arrayPalabras[arrayPalabras.length-1];
+
+    htmlPalabras += "<br>Hay "+cantidadPalabras+" palabras <br>Primera palabra: "+primeraPalabra+"<br> Ultima Palabra: "+ultimaPalabra;
+
+    document.getElementById('palabras').innerHTML = htmlPalabras;
+
 
 /* Para el div calificaciones:
-Dado el siguiente array de notas de clase en la 1ª Evaluación. 
+Dado el siguiente array de notas de clase en la 1ª Evaluación.
 var notas = new Array(4.5, 4, 6, 1, 7.5, 10, 5.25, 4.5, 2, 1, 8,7.5, 1, 7.5, 8);
 - Sacar el numero de alumnos aprobados
 - Dado este array, sacar por pantalla todas las notas que no están repetidas
@@ -30,12 +45,83 @@ var notas = new Array(4.5, 4, 6, 1, 7.5, 10, 5.25, 4.5, 2, 1, 8,7.5, 1, 7.5, 8);
 - Sacar las notas impares de los alumnos que han sacado al menos un 7
 - Elimina del array las notas por debajo de 5
 - Crea una función aleatoria que calcule numeros entre 5 y 10 sin decimales
-- Llama a esta funcion aleatoria para rellenar el array, respetando las notas que no han sido eliminadas. 
+- Llama a esta funcion aleatoria para rellenar el array, respetando las notas que no han sido eliminadas.
 - Muestra por pantalla el array con los nuevos elementos ordenandos de mayor a menor.
 
 NOTA1: Emplea siempre que se pueda metodos y propiedades del objeto Array
 NOTA2: Emplea if, for, for-in, for-of, do-while, while... */
 
+var notas = new Array(4.5, 4, 6, 1, 7.5, 10, 5.25, 4.5, 2, 1, 8,7.5, 1, 7.5, 8);
+
+// - Sacar el numero de alumnos aprobados
+let alumnosAprobados = notas.filter(nota => nota >= 5);
+htmlCalificaciones += "Hay "+alumnosAprobados.length+" alumnos aprobados";
+
+
+//- Dado este array, sacar por pantalla todas las notas que no están repetidas
+let notasRepetidas = [];
+for(let i = 0; i < notas.length; i++){
+    if(!notasRepetidas.includes(notas[i])){
+        notasRepetidas.push(notas[i]);
+    }
+}
+htmlCalificaciones +="<br>Notas sin repetir: "+notasRepetidas;
+
+
+// - Crea una funcion para comprobar las notas que estan por debajo de 5. Llama a esta función para sacar las notas pares de los alumnos que han suspendido
+function notasSuspendidas(nota){
+    return nota < 5;
+}
+let notaAlumnosSuspendidos = "";
+for(let i = 0; i < notas.length; i++){
+    if(notasSuspendidas(notas[i]) && notas[i] % 2 == 0 ){
+        notaAlumnosSuspendidos += notas[i]+" ";
+    }
+}
+htmlCalificaciones += "<br>Notas pares de alumnos suspendidos: "+notaAlumnosSuspendidos;
+
+
+// - Sacar las notas impares de los alumnos que han sacado al menos un 7
+let notasImparesMayor7 = [];
+for(let i = 0; i < notas.length; i++){
+    if(notas[i] >= 7 && notas[i] % 2 != 0) {
+        notasImparesMayor7.push(notas[i]);
+    }
+}
+htmlCalificaciones += "<br>Notas impares mayores que 7: "+notasImparesMayor7;
+
+
+// - Elimina del array las notas por debajo de 5
+let notasEncima5 = [];
+for(let nota of notas){
+    if(nota >= 5) notasEncima5.push(nota);
+}
+htmlCalificaciones += "<br>Notas Mayor que 5: "+notasEncima5;
+
+
+
+// - Crea una función aleatoria que calcule numeros entre 5 y 10 sin decimales
+function numCincoDiez(){
+    let numRandom = (Math.random()*5)+5;
+    return Math.floor(numRandom);
+}
+htmlCalificaciones += "<br>Nota Aleatoria entre 5 y 10: "+numCincoDiez();
+
+
+// - Llama a esta funcion aleatoria para rellenar el array, respetando las notas que no han sido eliminadas.
+while(notasEncima5.length < notas.length){
+    notasEncima5.push(numCincoDiez());
+}
+htmlCalificaciones += "<br>Array rellenado aleatorio: "+notasEncima5;
+
+
+// - Muestra por pantalla el array con los nuevos elementos ordenandos de mayor a menor.
+notasEncima5.sort((a,b) =>  b - a);
+htmlCalificaciones += "<br>Notas mayor que 5 ordenadas: "+notasEncima5;
+
+
+document.getElementById('calificaciones').innerHTML = htmlCalificaciones;
+}
 
 </script>
 </body>

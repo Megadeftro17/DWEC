@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post">
+        Nombre<input type="text" name="nombre" id="nombre" ></br>
+        Año nacimiento<input type="text" name="anyoNacimiento" id="anyoNacimiento"></br>
+        DNI<input type="text" name="dni" id="dni">
+
+        <div id="errorNombre"></div>
+        <div id="errorAnyo"></div>
+        <div id="errorDni"></div>
+
+        <button type="button" id="habilitar" onclick="habilitarEnviar()">habilitar Banco</button>
+        <button type="submit" id="enviar" disabled="disabled">Enviar</button>
+    </form>
+</body>
+
+<script src="scriptFormlario.js"></script>
+</html>
