@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="#" method="post">
+    <form action="" method="get">
         Nombre<input type="text" name="nombre" id="nombre" ></br>
         Año nacimiento<input type="text" name="anyoNacimiento" id="anyoNacimiento"></br>
         DNI<input type="text" name="dni" id="dni">
@@ -16,8 +16,10 @@
         <div id="errorDni"></div>
 
         <button type="button" id="habilitar" onclick="habilitarEnviar()">habilitar Banco</button>
-        <button type="submit" id="enviar" disabled="disabled">Enviar</button>
+        <button type="button" id="enviar" disabled="disabled" onclick="enviarDatos()">Enviar</button>
     </form>
+
+    <div id="resumenDatos"></div>
 </body>
 
 <script src="scriptFormlario.js"></script>

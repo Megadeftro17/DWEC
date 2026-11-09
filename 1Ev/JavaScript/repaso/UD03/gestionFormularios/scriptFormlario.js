@@ -55,9 +55,6 @@ function habilitarEnviar() {
         let primeraLetra = nombre.charAt(0).toUpperCase();
         let resto = nombre.slice(1).toLowerCase();
         nombreFormateado = primeraLetra + resto;
-        console.log(nombreFormateado);
-
-        formularioCorrecto = true;
     }
 
     // AÑO NACIMIENTO
@@ -65,14 +62,18 @@ function habilitarEnviar() {
     let errorAnyo = document.getElementById('errorAnyo');
     let anyoActual = new Date().getFullYear();
 
-    if(anyoNacimiento == "" || anyoNacimiento > anyoActual){
+    if(anyoNacimiento == "" || anyoNacimiento > anyoActual || anyoNacimiento < 1600){
         formularioCorrecto = false;
         errorAnyo.innerHTML = "<p>El año es obligatorio y no puede ser posterior al actual</p>";
     } else {
         errorAnyo.innerHTML = "";
-        let edad = anyoActual-anyoNacimiento;
-        (edad >= 18) ? formularioCorrecto = true : formularioCorrecto = false ;
-        console.log(edad);
+        edad = anyoActual-anyoNacimiento;
+        if(edad < 18){
+            formularioCorrecto = false;
+            errorAnyo.innerHTML = "<p>Introduce un año válido</p>";
+        } else{
+            errorAnyo.innerHTML = "";
+        }
     }
 
 
@@ -85,28 +86,43 @@ function habilitarEnviar() {
     let letraDni = dniPartes[1] ? dniPartes[1].toUpperCase() : "";
     const letrasPosibles = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
     let letraValidaDni = numerosDni % 23;
-    
-    letraCorrecta = false;
+
+    let letraCorrecta = false;
     if(letraDni == letrasPosibles[letraValidaDni]){
         letraCorrecta = true;
     }
 
     if(dni == "" || dni.length !== 10){
+        formularioCorrecto = false;
         errorDni.innerHTML = "<p>El dni es obligatorio y no puede ser de esa longitud</p>";
     } else if(!letraCorrecta){
+        formularioCorrecto = false;
         errorDni.innerHTML = "<p>La letra del DNI es incorrecta</p>";
     }else {
         errorDni.innerHTML = "";
         dniFormateado = numerosDni+"-"+letraDni;
-        formularioCorrecto = true;
     }
 
 
     // BOTON
     let botonEnviar = document.getElementById('enviar');
-    if(formularioCorrecto){
+    if(formularioCorrecto == true){
         botonEnviar.disabled = false;
     } else {
         botonEnviar.disabled = true;
     }
+}
+
+
+
+function enviarDatos(){
+    let codigoCliente = Math.floor((Math.random()*9000)+1000);
+    let marcaTiempo = Date.now();
+
+    let resumen = document.getElementById('resumenDatos');
+
+    resumen.innerHTML = "<h3>Nombre: "+nombreFormateado+"</h3><h3>Edad: "+edad+"</h3><h3>DNI: "+dniFormateado+"</h3><h3>Codigo: "+codigoCliente+"</h3><h3>Registro tiempo: "+marcaTiempo+"</h3>";
+
+    document.getElementById('enviar').disabled = true;
+    document.getElementById('habilitar').disabled = true;
 }
