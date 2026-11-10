@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Examen Práctico - Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .campo {
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <script src="matriculas.js"></script>
+</head>
+
+<body>
+    <h2>Registro de Alumnos / Clientes</h2>
+
+    <form id="miFormulario">
+        <div class="campo">
+            <label>Nombre completo:</label><br>
+            <input type="text" id="nombre">
+        </div>
+        <div class="campo">
+            <label>Fecha de Nacimiento:</label><br>
+            <input type="date" id="fechaNac">
+        </div>
+        <div class="campo">
+            <label>Nota de Acceso (0 - 10):</label><br>
+            <input type="number" id="nota" step="0.1">
+        </div>
+
+        <!-- NUEVOS CAMPOS AÑADIDOS -->
+        <div class="campo">
+            <label>Turno de matriculación:</label><br>
+            <input type="radio" name="turno" id="turnoManana" value="manana" checked>
+            <label for="turnoManana">Mañana</label>
+
+            <input type="radio" name="turno" id="turnoTarde" value="tarde">
+            <label for="turnoTarde">Tarde</label>
+        </div>
+
+        <div class="campo">
+            <input type="checkbox" id="terminos">
+            <label for="terminos">Acepto los términos y condiciones de matriculación</label>
+        </div>
+        <!-- FIN NUEVOS CAMPOS -->
+
+        <button type="button" onclick="agregarRegistro()">Añadir a la Tabla</button>
+        <button type="button" onclick="vaciarTodo()">Vaciar Registro</button>
+    </form>
+
+    <p id="mensajeError" class="error"></p>
+
+    <table id="tablaDatos">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Nota Final</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpoTabla">
+            <!-- Las filas se agregan mediante insertRow() e insertCell() -->
+        </tbody>
+    </table>
+
+    <h3>Estadísticas Globales</h3>
+    <p id="infoEstadisticas">Total registros: 0 | Nota Máxima: 0.00</p>
+</body>
+
+</html>

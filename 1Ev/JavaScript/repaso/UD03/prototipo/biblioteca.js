@@ -33,25 +33,27 @@
  * Limpia el formulario al terminar de insertar el registro correctamente.
  */
 
-let ingresosTotales = 0;
+let contadorRetrasos = 0;
 
 window.onload = function(){
-    const guardado = localStorage.getItem("ingresosAcumulados");
+    const guardado = localStorage.getItem("librosConRetraso");
     if(guardado !== null){
-        ingresosTotales = parseFloat(guardado);
+        contadorRetrasos = parseInt(guardado);
     } else {
-        ingresosTotales = 0.0;
+        contadorRetrasos = 0;
     }
 
-    document.getElementById("infoEstadisticas").innerHTML = "<p>Total de ingresos acumulados: "+(ingresosTotales.toFixed(2))+"€</p>";
+    document.getElementById("infoEstadisticas").innerHTML = "Total libros devueltos con retraso: "+contadorRetrasos;
 }
 
 function agregarPrestamo () {
     let msjError = document.getElementById('mensajeError');
 
     let titulo = document.getElementById('titulo').value;
-    if(titulo.length < 3 || titulo === ""){
-        msjError.innerHTML = "El campo no puede tener longitud menor que 3 ni estar vacio";
+    let inputISBN = document.getElementById('isbn').value;
+    
+    if((titulo.length < 3 || titulo === "") || (inputISBN === "" || inputISBN.length != 10)){
+        msjError.innerHTML = "El campo no puede tener longitud menor que 3 ni estar vacio ni el ISBN";
         return;
     } else{
         titulo = titulo.toUpperCase();
@@ -81,7 +83,39 @@ function agregarPrestamo () {
         diasRetraso = 0;
     }
 
-    console.log(diasRetraso);
 
+    let inputPrecio = parseFloat(document.getElementById('precio').value);
+    let costeSancion = 0.00;
+    if(diasRetraso > 0){
+        contadorRetrasos++;
+        localStorage.setItem("librosConRetraso",contadorRetrasos);
+        document.getElementById("infoEstadisticas").innerHTML = "Total libros devueltos con retraso: " + contadorRetrasos;
+        costeSancion = inputPrecio+(diasRetraso*0.5);
+    }
+
+    let idPrestamo = Math.floor((Math.random()*9000)+1000);
+
+
+    let tabla = document.getElementById('cuerpoTabla');
+    let nuevaFila = tabla.insertRow(0); // Inserta en la fila de debajo
+    let celdaID = nuevaFila.insertCell(0);
+    let celdaTitulo = nuevaFila.insertCell(1)
+    let celdaDiasRetraso = nuevaFila.insertCell(2);
+    let celdaImporteSancion = nuevaFila.insertCell(3);
+
+    celdaID.innerHTML = idPrestamo;
+    celdaTitulo.innerHTML = titulo;
+    celdaDiasRetraso.innerHTML = diasRetraso;
+    celdaImporteSancion.innerHTML = (costeSancion.toFixed(2))+" €";
+}
+
+
+function vaciarRegistroBiblioteca () {
+    localStorage.clear();
+    contadorRetrasos = 0;
+    document.getElementById('formBiblioteca').reset();
+
+    document.getElementById('mensajeError').innerHTML = "";
+    document.getElementById('cuerpoTabla').innerHTML = "";
 
 }
