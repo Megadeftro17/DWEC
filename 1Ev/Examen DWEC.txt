@@ -14,6 +14,8 @@ Examen DWEC
 - typeof, isNaN, bigint
 - Estructuras de control
 
+- forzar a usar métodos de un tipo en concreto (pudiendo pasar tipos de datos, formateando, o no, etc.)
+
 - reload
 - onload (forzar carga del dom -> Cuando el index empieza a leer antes js que DOM) => Si está el js al final no hace falta (windows.onload)
 
