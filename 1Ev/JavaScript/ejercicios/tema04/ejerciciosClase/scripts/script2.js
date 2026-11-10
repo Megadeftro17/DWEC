@@ -11,38 +11,46 @@ function ej2() {
     let numTelefono = "";
     let numCorrecto = false;
 
-    do{
-        let numTelefono = prompt("Introduce un numero de telefono (812345679)");
-        if(numTelefono === null) return;
+    do {
+        numTelefono = prompt("Introduce un número de teléfono fijo (9 dígitos, empieza por 8 o 9)");
+
+        if (numTelefono === null) return;
         numCorrecto = true;
 
-        if(numTelefono.length !== 9){
-            alert("ERROR: El numero tiene más de 9 numeros");
+        // debe tener 9 caracteres
+        if (numTelefono.length !== 9) {
+            alert("Error: El número debe tener exactamente 9 dígitos.");
             numCorrecto = false;
         }
 
-        let primerNumero = numTelefono.charAt(0);
-        if(primerNumero !== '8' && primerNumero !== '9'){
-            alert("ERROR: El primer numero no empieza ni por 8 ni por 9");
+        // todos deben ser números positivos
+        if (numCorrecto && (isNaN(numTelefono) || numTelefono.includes('-') || numTelefono.includes('+'))) {
+            alert("Error: El teléfono solo debe contener números positivos.");
             numCorrecto = false;
         }
 
-        let segundoNumero = numTelefono.charAt(1);
-        let tercerNumero = numTelefono.charAt(2);
-        if(segundoNumero === '0' && tercerNumero === '0'){
-            alert("ERROR: No puede haber dos 0's seguidos en la segunda posición");
-            numCorrecto = false;
-        }
-
-        for(let i = 0; i < numTelefono.length; i++){
-            if(numTelefono[i] < 0){
+        // empieza por 8 o 9
+        if (numCorrecto) {
+            let primerNumero = numTelefono.charAt(0);
+            if (primerNumero !== '8' && primerNumero !== '9') {
+                alert("Error: El teléfono fijo debe empezar por 8 o 9.");
                 numCorrecto = false;
             }
         }
 
-    }while(!numCorrecto);
+        // no puede tener ceros en la 2ª y 3ª posición
+        if (numCorrecto) {
+            let segundoNumero = numTelefono.charAt(1);
+            let tercerNumero = numTelefono.charAt(2);
+            if (segundoNumero === '0' && tercerNumero === '0') {
+                alert("Error: No puede haber dos ceros en la segunda y tercera posición.");
+                numCorrecto = false;
+            }
+        }
 
-    mostrar.innerHTML = "El numero de telefono "+numTelefono+" es correcto";
+    } while (!numCorrecto);
+
+    mostrar.innerHTML = "El número de teléfono " + numTelefono + " es correcto.";
 }
 
-let prueba = ej2();
+ej2();
