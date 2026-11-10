@@ -3,3 +3,27 @@ Examen DWEC
 - cambiar los for
 - Revisar errores y forzarlos para poner excepciones 
 - hidden, visibility, etc
+
+- Tableros (probar a meter números, imágenes, meter algún span para que no se desmonte la fila)
+- - Que pasa si lo hago contra la celda y no la fila o la columna (Ver que elementos son de tipo bloque o tipo línea)
+
+- Formularios 
+- Teléfonos (dígitos, pago o no, fijo o móvil)
+- storage
+- Objeto Booleano con formularios de checkear si es o no, radio-buttons, etc
+- typeof, isNaN, bigint
+- Estructuras de control
+
+- reload
+- onload (forzar carga del dom -> Cuando el index empieza a leer antes js que DOM) => Si está el js al final no hace falta (windows.onload)
+
+6 pregunta ra 3, date, number, string, array, iteración de esos objetos, revisar object 1 ejercicio práctico, recoger datos array io formularios y hacer x cosas y hay formulario tipo date y hacer cosas con él, hay corrreo electronico string sacar con un subtring orden invertido, si tiene arroba, si está rellenado el parametro null/undefined. teléfono en formulario fijo o móvil. ver dom, meter strings, meter números tablero, imágenes. meter span para la fila. no es lo mismo fila, celda o columna. elementos dom bloque fila o línea. Revisar object y storage para  el cuestionario. objetos booleanos en radiobutton o checkbox. isnan type of y estructuras condicionales y de repetición. reload y onload  para forzar el dom
+
+hacer windows.onload
+
+declarar fuera o dentro string y meterlo en el storage
+
+
+=================================================
+ENGLOBAR => FORMULARIOS - TABLAS - ObjetosNativos
+=================================================
