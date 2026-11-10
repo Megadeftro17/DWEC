@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestor de Préstamos de Biblioteca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .campo {
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+    <script src="biblioteca.js"></script>
+</head>
+
+<body>
+    <h2>Gestor de Préstamos de Biblioteca</h2>
+
+    <form id="formBiblioteca">
+        <div class="campo">
+            <label>Título del libro:</label><br>
+            <input type="text" id="titulo">
+        </div>
+        <div class="campo">
+            <label>Código ISBN:</label><br>
+            <input type="text" id="isbn">
+        </div>
+        <div class="campo">
+            <label>Fecha Límite de Devolución:</label><br>
+            <input type="date" id="fechaLimite">
+        </div>
+        <div class="campo">
+            <label>Precio de reposición (€):</label><br>
+            <input type="number" id="precio" step="0.01">
+        </div>
+
+        <button type="button" onclick="agregarPrestamo()">Añadir Préstamo</button>
+        <button type="button" onclick="vaciarRegistroBiblioteca()">Vaciar Registro</button>
+    </form>
+
+    <p id="mensajeError" class="error"></p>
+
+    <table id="tablaDatos">
+        <thead>
+            <tr>
+                <th>ID de Préstamo</th>
+                <th>Título</th>
+                <th>Días de retraso</th>
+                <th>Importe Total de Sanción</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpoTabla">
+            <!-- Las filas se agregan mediante insertRow() e insertCell() -->
+        </tbody>
+    </table>
+
+    <h3>Estadísticas Globales</h3>
+    <p id="infoEstadisticas">Total de libros devueltos con retraso: 0</p>
+</body>
+
+</html>
