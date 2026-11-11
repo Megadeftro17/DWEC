@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Examen Práctico - Concurso de Fotografía</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .campo {
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #e0e0e0;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+        img.miniatura {
+            width: 100px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-precargada {
+            background: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #4CAF50;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script src="fotografia.js"></script>
+</head>
+
+<body>
+    <h2>Votación: Concurso de Fauna de Aragón</h2>
+
+    <div class="info-precargada">
+        <p id="datosPrecargados">Cargando datos de sesión...</p>
+    </div>
+
+    <form id="formVotacion">
+        <div class="campo">
+            <label><strong>Nombre del Votante:</strong></label><br>
+            <input type="text" id="nombreVotante">
+        </div>
+
+        <div class="campo">
+            <label><strong>Elige la fotografía a votar:</strong></label><br>
+            <input type="radio" name="foto" id="fotoOso" value="oso.jpg">
+            <label for="fotoOso">Oso Pardo Pirineos</label><br>
+
+            <input type="radio" name="foto" id="fotoQuebrantahuesos" value="quebrantahuesos.jpg">
+            <label for="fotoQuebrantahuesos">Quebrantahuesos</label><br>
+
+            <input type="radio" name="foto" id="fotoMarmota" value="marmota.jpg">
+            <label for="fotoMarmota">Marmota Alpina</label>
+        </div>
+
+        <div class="campo">
+            <label><strong>Puntuación (1 al 10):</strong></label><br>
+            <input type="number" id="puntuacion" min="1" max="10">
+        </div>
+
+        <div class="campo">
+            <label><strong>Consentimientos legales (Debes marcar AMBOS para votar):</strong></label><br>
+            <input type="checkbox" id="checkBases" class="legal-check">
+            <label for="checkBases">He leído y acepto las bases del concurso.</label><br>
+
+            <input type="checkbox" id="checkDatos" class="legal-check">
+            <label for="checkDatos">Consiento el tratamiento de mis datos personales.</label>
+        </div>
+
+        <button type="button" onclick="registrarVoto()">Emitir Voto</button>
+        <button type="button" onclick="reiniciarConcurso()">Reiniciar Concurso (Borrar Memoria)</button>
+    </form>
+
+    <p id="mensajeError" class="error"></p>
+
+    <table id="tablaVotos">
+        <thead>
+            <tr>
+                <th>Votante</th>
+                <th>Fotografía Elegida</th>
+                <th>Puntuación Final</th>
+                <th>Fecha del Voto</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpoTabla">
+            <!-- Las filas se agregan dinámicamente -->
+        </tbody>
+    </table>
+
+    <h3>Estadísticas Generales</h3>
+    <p id="infoEstadisticas">Total Votos Emitidos: 0 | Puntuación Media Global: 0.00</p>
+</body>
+
+</html>
