@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestor de Torneos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .campo {
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <!-- Aquí enlazas tu archivo JavaScript -->
+    <script src="torneoDeportivo.js"></script>
+</head>
+
+<body>
+    <h2>Inscripción a Torneo Deportivo</h2>
+
+    <form id="formTorneo">
+        <div class="campo">
+            <label>Nombre del Jugador:</label><br>
+            <input type="text" id="jugador">
+        </div>
+        <div class="campo">
+            <label>DNI:</label><br>
+            <input type="text" id="dni">
+        </div>
+        <div class="campo">
+            <label>Fecha de Nacimiento:</label><br>
+            <input type="date" id="fechaNac">
+        </div>
+        <div class="campo">
+            <label>Fecha del Torneo:</label><br>
+            <input type="date" id="fechaTorneo">
+        </div>
+
+        <button type="button" onclick="inscribirJugador()">Registrar Inscripción</button>
+        <button type="button" onclick="borrarHistorial()">Borrar Historial</button>
+    </form>
+
+    <p id="mensajeError" class="error"></p>
+
+    <table id="tablaInscripciones">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Jugador</th>
+                <th>DNI</th>
+                <th>Edad</th>
+                <th>Cuota a Pagar</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpoTabla">
+            <!-- Filas insertadas mediante JS -->
+        </tbody>
+    </table>
+
+    <h3>Estadísticas del Torneo</h3>
+    <p id="infoEstadisticas">Menores de edad inscritos históricamente: 0</p>
+</body>
+
+</html>

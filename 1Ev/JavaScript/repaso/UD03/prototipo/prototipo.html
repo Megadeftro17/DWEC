@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Examen Práctico - Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .campo {
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Registro de Alumnos / Clientes</h2>
+
+    <!-- FORMULARIO SIN PREVENTDEFAULT (Se usan botones tipo button) -->
+    <form id="miFormulario">
+        <div class="campo"> <label>Nombre completo:</label><br> <input type="text" id="nombre"> </div>
+        <div class="campo"> <label>Fecha de Nacimiento:</label><br> <input type="date" id="fechaNac"> </div>
+        <div class="campo"> <label>Nota / Puntuación (0 - 10):</label><br> <input type="number" id="nota" step="0.1">
+        </div>
+
+        <!-- El evento onclick llama a la función JS directamente --> <button type="button"
+            onclick="agregarRegistro()">Añadir a la Tabla</button> <button type="button" onclick="vaciarTodo()">Vaciar
+            Registro</button>
+    </form>
+
+    <p id="mensajeError" class="error"></p>
+
+    <!-- TABLA PARA INSERTAR FILAS -->
+    <table id="tablaDatos">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Nota</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpoTabla"> <!-- Las filas se agregan mediante insertRow() e insertCell() --> </tbody>
+    </table>
+
+    <h3>Estadísticas Globals</h3>
+    <p id="infoEstadisticas">Total registros: 0 | Nota Máxima: 0</p>
+
+    <script> // Variables globales para control de estadísticas 
+        let totalRegistros = 0;
+        let notaMaximaGlobal = 0;
+
+        // Al cargar la ventana (evento clásico de la ventana) 
+        window.onload = function () {
+            // Recuperar contador guardado en localStorage sin JSON 
+            if (localStorage.getItem("total_alumnos")) {
+                totalRegistros = Number(localStorage.getItem("total_alumnos"));
+            }
+            actualizarEstadisticas();
+        };
+
+        function agregarRegistro() {
+            let campoNombre = document.getElementById("nombre").value;
+            let campoFecha = document.getElementById("fechaNac").value;
+            let campoNota = document.getElementById("nota").value;
+            let txtError = document.getElementById("mensajeError");
+
+            txtError.innerHTML = "";
+
+            // 1. OBJETOS NATIVOS: STRING (Validación y formateo)
+            if (campoNombre.length < 3) {
+                txtError.innerHTML = "El nombre debe tener al menos 3 caracteres.";
+                return;
+            }
+            let nombreMayus = campoNombre.toUpperCase();
+
+            if (campoFecha === "" || campoNota === "") {
+                txtError.innerHTML = "Todos los campos son obligatorios.";
+                return;
+            }
+
+            // 2. OBJETOS NATIVOS: DATE (Cálculo de edad) 
+            let fechaNacimiento = new Date(campoFecha);
+            let hoy = new Date();
+            let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+            let mes = hoy.getMonth() - fechaNacimiento.getMonth();
+
+            // Corregir si no ha cumplido años este año todavía
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+                edad--;
+            }
+
+            if (edad < 0) {
+                txtError.innerHTML = "La fecha de nacimiento no puede ser futura.";
+                return;
+            }
+
+            // 3. OBJETOS NATIVOS: NUMBER Y MATH
+            let numNota = parseFloat(campoNota);
+            let notaFormateada = numNota.toFixed(2);
+            // String con 2 decimales
+            let idAleatorio = Math.floor(Math.random() * 9000) + 1000; // ID entre 1000 y 9999
+
+            // Actualizar nota máxima
+            if (numNota > notaMaximaGlobal) {
+                notaMaximaGlobal = numNota;
+            }
+
+            // 4. MANIPULACIÓN DE TABLA CON DOM CLÁSICO (insertRow e insertCell)
+            let tabla = document.getElementById("cuerpoTabla");
+            let nuevaFila = tabla.insertRow(-1); // Insertar al final
+
+            let celdaId = nuevaFila.insertCell(0);
+            let celdaNombre = nuevaFila.insertCell(1);
+            let celdaEdad = nuevaFila.insertCell(2);
+            let celdaNota = nuevaFila.insertCell(3);
+
+            celdaId.innerHTML = idAleatorio;
+            celdaNombre.innerHTML = nombreMayus;
+            celdaEdad.innerHTML = edad;
+            celdaNota.innerHTML = notaFormateada;
+
+            // 5. LOCALSTORAGE (Sin JSON)
+            totalRegistros++;
+            localStorage.setItem("total_alumnos", totalRegistros);
+
+            // Actualizar vista y limpiar formulario
+            actualizarEstadisticas();
+            document.getElementById("miFormulario").reset();
+        }
+
+        function actualizarEstadisticas() {
+            document.getElementById("infoEstadisticas").innerHTML = "Total registros: " + totalRegistros + " | Nota Máxima actual: " + notaMaximaGlobal;
+        }
+
+        function vaciarTodo() {
+            document.getElementById("cuerpoTabla").innerHTML = "";
+            totalRegistros = 0;
+            notaMaximaGlobal = 0;
+            localStorage.removeItem("total_alumnos");
+            actualizarEstadisticas();
+        }
+    </script>
+</body>
+
+</html>
