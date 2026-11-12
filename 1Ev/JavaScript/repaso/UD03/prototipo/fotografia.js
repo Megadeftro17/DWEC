@@ -34,12 +34,15 @@ let suma_puntuaciones = 0
 localStorage.setItem("juez_activo","Dra. Martinez");
 
 window.onload = function(){
-    const juezActivo = localStorage.getItem("juez_activo");
+    let juezActivo = localStorage.getItem("juez_activo");
     let parrafoSesion = document.querySelector('.info-precargada>p');
 
-    if(juezActivo !== null){
-        parrafoSesion.innerHTML = "Sesión iniciada por: "+juezActivo;
-    } else {
+    // Si no hay juez en la memoria, asignamos la Dra. Martínez por defecto
+    if(juezActivo === null){
+        juezActivo = "Dra. Martinez";
+        localStorage.setItem("juez_activo", juezActivo);
+        parrafoSesion.innerHTML = "Sesión iniciada por: " + juezActivo;
+    }else {
         parrafoSesion.innerHTML = "Cargando datos de sesión...";
     }
 

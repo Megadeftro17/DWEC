@@ -71,13 +71,14 @@
     <h3>Estadísticas Globals</h3>
     <p id="infoEstadisticas">Total registros: 0 | Nota Máxima: 0</p>
 
-    <script> // Variables globales para control de estadísticas 
+    <script> // Variables globales para control de estadísticas
         let totalRegistros = 0;
         let notaMaximaGlobal = 0;
 
-        // Al cargar la ventana (evento clásico de la ventana) 
+        // Al cargar la ventana (evento clásico de la ventana)
+        
         window.onload = function () {
-            // Recuperar contador guardado en localStorage sin JSON 
+            // Recuperar contador guardado en localStorage sin JSON
             if (localStorage.getItem("total_alumnos")) {
                 totalRegistros = Number(localStorage.getItem("total_alumnos"));
             }
