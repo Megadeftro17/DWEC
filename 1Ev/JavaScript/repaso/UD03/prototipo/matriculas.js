@@ -25,3 +25,153 @@
  * - Incrementa el total de registros en 1.
  * - Compara la "Nota Final" de este alumno con la nota_maxima global. Si es mayor, actualiza el récord.
  * - Guarda ambos datos actualizados en localStorage, actualiza el texto en pantalla y vacía el formulario (.reset()).*/
+
+
+
+let totalAlumnos = 0;
+let nota_maxima = parseFloat(0);
+
+window.onload = function(){
+    const guardadoAlumnos = localStorage.getItem("totalAlumnos");
+    const guardadoNota = localStorage.getItem("notaMaxima");
+    if(guardadoAlumnos !== null){
+        totalAlumnos = parseInt(guardadoAlumnos);
+    } else {
+        totalAlumnos = 0;
+    }
+
+    if(guardadoNota !== null){
+        nota_maxima = parseFloat(guardadoNota);
+    } else{
+        nota_maxima = 0;
+    }
+
+    document.getElementById('infoEstadisticas').innerHTML = "Total registros: "+totalAlumnos+" | Nota maxima: "+nota_maxima;
+}
+
+
+// ================================ FUNCION PARA ACTUALIZAR EL LOCALSTORAGE ================================
+function actualizarEstadisticas(notaAlumno){
+    totalAlumnos++;
+    localStorage.setItem("totalAlumnos",totalAlumnos);
+    if(nota_maxima < notaAlumno){
+        nota_maxima = notaAlumno;
+    }
+    localStorage.setItem("notaMaxima",nota_maxima);
+
+    document.getElementById('infoEstadisticas').innerHTML = "Total Registros: "+totalAlumnos+" | Nota Máxima: "+nota_maxima;
+}
+
+
+// ================================ FUNCION CON VALIDACIONES Y AGREGAR ================================
+function agregarRegistro(){
+    let inputNombre = document.getElementById('nombre').value.trim();
+    let inputFechaNac = document.getElementById('fechaNac').value;
+    let inputNota = document.getElementById('nota').value;
+    let inputTurno = document.querySelector('input[name="turno"]:checked');
+    let inputTerminos = document.querySelector('input[type="checkbox"]').checked;
+    let msjError = document.querySelector('.error');
+
+    // ================================ VALIDACION TERMINOS ================================
+    if(!inputTerminos){
+        msjError.innerHTML = "Debes aceptar términos y condiciones";
+        return;
+    }
+
+    // ================================ VALIDACION NOMBRE ================================
+    if(inputNombre === ""){
+        msjError.innerHTML = "El nombre es obligatorio";
+        return;
+    }
+    if(inputNombre.length < 3 ){
+        msjError.innerHTML = "El nombre debe tener al menos 3 caracteres";
+        return;
+    }
+
+    inputNombre = inputNombre.toUpperCase().trim();
+    msjError.innerHTML = "";
+
+    //================================ VALIDACION FECHAS ================================
+    let fecha = new Date(inputFechaNac);
+    let hoy = new Date();
+
+    if(inputFechaNac === ""){
+        msjError.innerHTML = "La fecha es obligatoria";
+        return;
+    }
+
+    let edad = hoy.getFullYear() - fecha.getFullYear();
+
+    let mes = hoy.getMonth() - fecha.getMonth();
+
+    if(mes < 0 || (mes === 0 && hoy.getDate() < fecha.getDate())){
+        edad--;
+    }
+
+    if(edad < 0){
+        msjError.innerHTML = "No puedes nacer después de hoy";
+        return;
+    }
+
+    msjError.innerHTML = "";
+
+    // ================================ VALIDACION NOTA ================================
+    inputNota = parseFloat(inputNota);
+
+    if(inputNota === "" || Number.isNaN(inputNota)){
+        msjError.innerHTML = "La nota es obligatoria y debe ser un numero";
+        return;
+    }
+
+    if(inputNota < 0 || inputNota > 10){
+        msjError.innerHTML = "La nota debe estar entre 0 y 10";
+        return;
+    }
+
+    // ================================ VALIDACION TURNO ================================
+    if(inputTurno === null){
+        msjError.innerHTML = "Elige obligatoriamente un turno";
+        return;
+    }
+
+    let turno = inputTurno.value;
+
+    if (turno == "tarde") {
+        inputNota += 0.50;
+    if (inputNota > 10) {
+        inputNota = 10;
+    }
+}
+
+
+    inputNota = inputNota.toFixed(2);
+
+
+    let idAleatorio = Math.floor((Math.random()*9999)+1000);
+
+
+    // ================================ DOM ================================
+    let tabla = document.getElementById('tablaDatos');
+    let nuevaFila = tabla.insertRow(-1);
+    let celdaId = nuevaFila.insertCell(0);
+    let celdaNombre = nuevaFila.insertCell(1);
+    let celdaEdad = nuevaFila.insertCell(2);
+    let celdaNotaFinal = nuevaFila.insertCell(3);
+
+    celdaId.innerHTML = idAleatorio;
+    celdaNombre.innerHTML = inputNombre;
+    celdaEdad.innerHTML = edad;
+    celdaNotaFinal.innerHTML = inputNota;
+
+    actualizarEstadisticas(parseFloat(inputNota));
+}
+
+// ================================ FUNCION PARA VACIAR TODO ================================
+function vaciarTodo(){
+    localStorage.clear();
+    totalAlumnos = 0;
+    nota_maxima = 0;
+    document.getElementById('infoEstadisticas').innerHTML = "Total registros: 0 | Nota Máxima: 0.00";
+    document.querySelector('tbody').innerHTML = "";
+    document.querySelector('form').reset();
+}
