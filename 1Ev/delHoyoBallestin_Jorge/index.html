@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registro de candidatos</title>
+    <link rel="stylesheet" href="diseno.css" />
+    <script src="funcionalidad.js" defer></script>
+  </head>
+  <body>
+    <main class="contenedor">
+      <h1>Registro de candidatos</h1>
+      <p class="aviso">
+        Todos los campos son obligatorios en cada fila. Los mensajes de
+        validación se muestran en la consola del navegador (F12).
+      </p>
+
+      <div class="barra">
+        <button type="button" id="btnAnadir" onclick="anadirFila()">
+          Añadir fila
+        </button>
+        <button type="button" id="btnRestaurar" onclick="datosEjemplo()">
+          Restaurar datos de ejemplo
+        </button>
+      </div>
+
+      <div id="tabla-scroll">
+        <table id="tablaCandidatos">
+          <thead>
+            <tr>
+              <th rowspan="2" class="g-base">Nº</th>
+              <th colspan="4" class="g-candidato">Datos del candidato</th>
+              <th colspan="3" class="g-solicitud">Solicitud de empleo</th>
+              <th colspan="3" class="g-estado">Estado</th>
+              <th rowspan="2" class="g-base">Acciones</th>
+            </tr>
+            <tr>
+              <th class="s-candidato">Nombre</th>
+              <th class="s-candidato">Apellidos</th>
+              <th class="s-candidato">Email</th>
+              <th class="s-candidato">DNI</th>
+              <th class="s-solicitud">Nº Seguridad Social</th>
+              <th class="s-solicitud">Código de oferta</th>
+              <th class="s-solicitud">Carta de motivación</th>
+              <th class="s-estado">Caracteres de la carta</th>
+              <th class="s-estado">Activado</th>
+              <th class="s-estado">Fecha de envío</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpoTabla"></tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>

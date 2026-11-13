@@ -1,0 +1,226 @@
+:root {
+  --fondo: #e8eef3;
+  --panel: #ffffff;
+  --tinta: #1b2a3a;
+  --tinta-suave: #5a6b7b;
+  --primario: #14506e;
+  --primario-oscuro: #0d3a51;
+  --primario-claro: #d6e6ef;
+  --solicitud: #c77d0a;
+  --solicitud-oscuro: #9f6208;
+  --solicitud-claro: #f8e8c9;
+  --estado: #3f5566;
+  --estado-claro: #dde4ea;
+  --borde: #c3d0db;
+  --ok: #1e8449;
+  --ok-fondo: #e3f4ea;
+  --ko: #b83227;
+  --ko-fondo: #fbe9e7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem 1rem;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.45;
+}
+
+.contenedor {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0 0 0.25rem;
+  color: var(--primario-oscuro);
+  font-size: 1.9rem;
+}
+
+.aviso {
+  margin: 0 0 1.25rem;
+  color: var(--tinta-suave);
+}
+
+/* ---------- Barra de acciones y resumen ---------- */
+.barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.resumen {
+  margin: 0 0 0 auto;
+  padding: 0.45rem 0.9rem;
+  background: var(--panel);
+  border-left: 4px solid var(--estado);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--estado);
+}
+
+/* ---------- Tabla ---------- */
+.tabla-scroll {
+  overflow-x: auto;
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+}
+
+table {
+  width: 100%;
+  min-width: 88rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  padding: 0.5rem 0.55rem;
+  border: 1px solid var(--borde);
+  vertical-align: top;
+  text-align: left;
+}
+
+th {
+  font-weight: 600;
+  color: #fff;
+}
+
+.g-base { background: var(--primario-oscuro); }
+.g-candidato { background: var(--primario); text-align: center; }
+.g-solicitud { background: var(--solicitud); text-align: center; }
+.g-estado { background: var(--estado); text-align: center; }
+
+.s-candidato { background: var(--primario-claro); color: var(--primario-oscuro); }
+.s-solicitud { background: var(--solicitud-claro); color: var(--solicitud-oscuro); }
+.s-estado { background: var(--estado-claro); color: var(--estado); }
+
+tbody tr.activada { background: #fff6e0; }
+tbody tr.enviada { background: var(--ok-fondo); }
+
+tbody tr.vacia td {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--tinta-suave);
+}
+
+.c-id {
+  font-weight: 700;
+  color: var(--primario-oscuro);
+  text-align: center;
+}
+
+.c-caracteres,
+.c-activada {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.c-activada.si {
+  font-weight: 700;
+  color: var(--ok);
+}
+
+.c-activada.no {
+  color: var(--tinta-suave);
+}
+
+.c-fecha {
+  white-space: nowrap;
+}
+
+/* ---------- Campos ---------- */
+input,
+textarea {
+  width: 100%;
+  min-width: 7.5rem;
+  padding: 0.4rem 0.5rem;
+  font: inherit;
+  color: var(--tinta);
+  background: #f9fbfc;
+  border: 2px solid var(--borde);
+  border-radius: 4px;
+}
+
+textarea {
+  min-width: 12rem;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+button:focus-visible {
+  outline: 3px solid #8fc1dc;
+  outline-offset: 1px;
+}
+
+input.valido,
+textarea.valido {
+  border-color: var(--ok);
+  background: var(--ok-fondo);
+}
+
+input.invalido,
+textarea.invalido {
+  border-color: var(--ko);
+  background: var(--ko-fondo);
+}
+
+input:disabled,
+textarea:disabled {
+  color: var(--tinta-suave);
+  background: #eef2f5;
+  border-color: var(--borde);
+}
+
+/* ---------- Botones ---------- */
+button {
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primario);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: var(--primario-oscuro);
+}
+
+button:disabled {
+  background: #a9b8c4;
+  cursor: not-allowed;
+}
+
+#btnRestaurar {
+  background: var(--estado);
+}
+
+.acciones {
+  min-width: 10.5rem;
+}
+
+.acciones button {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.btn-enviar:not(:disabled) {
+  background: var(--solicitud);
+}
+
+.btn-enviar:hover:not(:disabled) {
+  background: var(--solicitud-oscuro);
+}
